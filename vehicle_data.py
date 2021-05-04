@@ -10,14 +10,18 @@ soup = BeautifulSoup(source, 'lxml')
 titles = soup.find_all('h3')
 titles = [el.get_text() for el in titles]
 names = soup.find_all('em')
-names = names[2:]
+names = [name.get_text() for name in names[2:]]
 values = soup.find_all('dd')
+values = [value.get_text() for value in values]
 
-i = 0
-for value in values:
-    print(i, names[i].get_text(), end=': ')
-    print(value.get_text())
-    i += 1
+for title in titles:
+    j = titles.index(title)
+    i = 0
+    print(title)
+    for i in range(len(values)//len(titles) * j, len(values)//len(titles) * (j+1)):
+        print(i, names[i], end=': ')
+        print(values[i])
+        i += 1
 
 # data = {}
 # for title in titles:
