@@ -9,12 +9,13 @@ def unique(list1):
     return Counter(list1).keys()
 
 
+identifier = 'tesla'
 total_names = []
 
-with open('information_concerning_a_few_cars.csv', 'w', newline='') as output_csv:
+with open(f'information_concerning_{identifier}.csv', 'w', newline='') as output_csv:
     csv_writer = csv.DictWriter(output_csv, fieldnames=WRITTEN_CSV_COLUMNS, extrasaction='ignore')
     csv_writer.writeheader()
-    with open('car_make_links_big3.csv', newline='') as source_csv:
+    with open(f'car_make_links_{identifier}.csv', newline='') as source_csv:
         csv_reader = csv.reader(source_csv)
         next(csv_reader)
         for row in csv_reader:
