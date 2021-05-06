@@ -53,6 +53,7 @@ WRITTEN_CSV_COLUMNS = [
     'Nominal Capacity',
     'Top speed (electrical)',
     'Maximum Capacity',
+    'Fuel capacity (optional)',
     'Low (WLTP)',
     'Extra high (WLTP)',
     'Charger type',

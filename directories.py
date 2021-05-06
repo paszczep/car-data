@@ -2,9 +2,15 @@ import csv
 import requests
 from bs4 import BeautifulSoup
 
-makes = ['Toyota', 'Mercedes', 'Volvo']
+# makes = ['Toyota', 'Mercedes', 'Volvo', 'Ford', 'Volkswagen']
 
-with open('car_make_links.csv', 'w', newline='') as csvfile:
+makes = ['Abarth', 'Acura', 'Alfa Romeo', 'Aston Martin', 'Audi', 'Bentley', 'BMW', 'Citroën', 'Dacia',
+          'Dodge', 'DS Automobiles', 'Ferrari', 'Fiat', 'Ford', 'Honda', 'Hyundai', 'Infiniti', 'Jaguar', 'Jeep',
+          'Kia', 'Lancia', 'Land Rover', 'Lexus', 'Maserati', 'Mazda', 'Mercedes', 'Mini', 'Mitsubishi', 'Nissan',
+          'Opel', 'Peugeot', 'Porsche', 'Renault', 'Seat', 'Škoda', 'Smart', 'Subaru', 'Suzuki', 'Toyota',
+          'Volkswagen', 'Volvo']
+
+with open('car_make_links_big3.csv', 'w', newline='') as csvfile:
     fieldnames = ['make', 'model', 'body', 'link']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()

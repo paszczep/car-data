@@ -2,13 +2,19 @@ from constans import FUEL_DESIGNATORS, WRITTEN_CSV_COLUMNS
 import requests
 import csv
 from bs4 import BeautifulSoup
+from collections import Counter
 
-# total_names = []
+
+def unique(list1):
+    return Counter(list1).keys()
+
+
+total_names = []
 
 with open('information_concerning_a_few_cars.csv', 'w', newline='') as output_csv:
-    csv_writer = csv.DictWriter(output_csv, fieldnames=WRITTEN_CSV_COLUMNS)
+    csv_writer = csv.DictWriter(output_csv, fieldnames=WRITTEN_CSV_COLUMNS, extrasaction='ignore')
     csv_writer.writeheader()
-    with open('car_make_links.csv', newline='') as source_csv:
+    with open('car_make_links_big3.csv', newline='') as source_csv:
         csv_reader = csv.reader(source_csv)
         next(csv_reader)
         for row in csv_reader:
@@ -40,6 +46,6 @@ with open('information_concerning_a_few_cars.csv', 'w', newline='') as output_cs
                     data_dict[names[i]] = values[i]
                 csv_writer.writerow(data_dict)
 
-    #             total_names += names
-    #
-    # print(total_names)
+                total_names += names
+
+print(unique(total_names))
