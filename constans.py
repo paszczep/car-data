@@ -13,6 +13,12 @@ FUEL_DESIGNATORS = [
     'Extra high',
     'CO2 Emissions (Extra high)']
 
+ALL_CAR_MAKES = ['Abarth', 'Acura', 'Alfa Romeo', 'Aston Martin', 'Audi', 'Bentley', 'BMW', 'Citroën', 'Dacia',
+          'Dodge', 'DS Automobiles', 'Ferrari', 'Fiat', 'Ford', 'Honda', 'Hyundai', 'Infiniti', 'Jaguar', 'Jeep',
+          'Kia', 'Lancia', 'Land Rover', 'Lexus', 'Maserati', 'Mazda', 'Mercedes', 'Mini', 'Mitsubishi', 'Nissan',
+          'Opel', 'Peugeot', 'Porsche', 'Renault', 'Seat', 'Škoda', 'Smart', 'Subaru', 'Suzuki', 'Toyota',
+          'Volkswagen', 'Volvo', 'Tesla']
+
 WRITTEN_CSV_COLUMNS = [
     'Make',
     'Model',

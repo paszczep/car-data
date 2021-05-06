@@ -1,21 +1,15 @@
+from constans import ALL_CAR_MAKES
 import csv
 import requests
 from bs4 import BeautifulSoup
 
-# makes = ['Toyota', 'Mercedes', 'Volvo', 'Ford', 'Volkswagen']
-
-makes = ['Abarth', 'Acura', 'Alfa Romeo', 'Aston Martin', 'Audi', 'Bentley', 'BMW', 'Citroën', 'Dacia',
-          'Dodge', 'DS Automobiles', 'Ferrari', 'Fiat', 'Ford', 'Honda', 'Hyundai', 'Infiniti', 'Jaguar', 'Jeep',
-          'Kia', 'Lancia', 'Land Rover', 'Lexus', 'Maserati', 'Mazda', 'Mercedes', 'Mini', 'Mitsubishi', 'Nissan',
-          'Opel', 'Peugeot', 'Porsche', 'Renault', 'Seat', 'Škoda', 'Smart', 'Subaru', 'Suzuki', 'Toyota',
-          'Volkswagen', 'Volvo', 'Tesla']
 
 with open('car_make_links_tesla.csv', 'w', newline='') as csvfile:
     fieldnames = ['make', 'model', 'body', 'link']
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
     writer.writeheader()
 
-    for make in makes:
+    for make in ALL_CAR_MAKES:
         for page_number in range(1, 10):
             directory = f'https://www.autoevolution.com/search.php?t=cars&s={make}&p={page_number}'
 
